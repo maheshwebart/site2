@@ -1,0 +1,180 @@
+:root{
+    --charcoal: #264653ff;
+    --persian-green: #2a9d8fff;
+    --saffron: #e9c46aff;
+    --sandy-brown: #f4a261ff;
+    --burnt-sienna: #e76f51ff;
+    --bkg-color:#ffffff;
+}
+
+html{
+
+  font-family: poppins;
+
+}
+
+body{
+    /* max-width: 100%; */
+    background-color: var(--bkg-color);
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+section#page{
+    display: grid;
+    grid-template-areas: 'nav nav nav nav nav nav'
+    'header header header header header header'
+    'main main main main main main'
+    'footer footer footer footer footer footer'; 
+    /* justify-content: center; */
+    margin-inline:auto;
+    
+
+}
+
+div.navbar{
+    grid-area: nav;
+}
+
+div.navbar .container{
+    /* grid-area: nav; */
+    background: rgba(42, 157, 143, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline:7.5rem
+    
+}
+
+div.navbar .container .logo h2 a{
+    font-family: "rubik doodle shadow";
+    font-weight: 400;
+    font-size: 3rem;
+    text-decoration: none;
+    color:var(--saffron);
+
+}
+
+div.navbar .container nav ul{
+    display: flex;
+    flex-direction: space-between;
+    list-style-type: none;
+    padding:0 5px;
+}
+div.navbar .container nav ul li{
+    padding-left:0.5rem;
+
+
+}
+
+div.navbar .container nav ul li a{
+    text-decoration: none;
+    color:var(--charcoal);
+    position: relative;
+
+}
+
+/* div.navbar .container nav ul li a:hover{
+    text-decoration: underline;
+    text-decoration-color:var(--saffron);
+    color:var(--charcoal);
+
+} */
+
+div.navbar .container nav ul li a::after{
+    content:'';
+    position: absolute;
+    width:100%;
+    transform: scaleX(0);
+    height:4px;
+   bottom:0;
+   left:0;
+   background-color: var(--saffron);
+   transition:transform 0.3s ease-in;
+   transform-origin: bottom right;
+
+}
+
+div.navbar .container nav ul li a:hover::after{
+   
+    transform: scaleX(1);
+    transform-origin: bottom left;
+   
+
+}
+
+header{
+    grid-area:header;
+    height:80svh;
+    background-color: var( --sandy-brown);
+    background-image: url('images/banner_travel_exp.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline:7.5rem;
+    align-items: center;
+    justify-items: center;
+}
+header .container h1{
+    padding-top:3rem;
+ font-size: 3rem;
+ margin:-1rem; 
+ 
+}
+
+header .container span{
+    display: inline-block;
+    color:var(--burnt-sienna);
+    font-size: 1.5rem;
+    position:relative;
+    z-index:2
+}
+
+header .container p{
+   width:25rem;
+   text-align: center;
+   
+}
+ header .container span::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    bottom:3px;
+    left:0;
+    height:6px;
+    background-color: var(--saffron);
+    z-index: 0;
+    
+
+ }
+
+
+ header .container .button {
+    display: flex;
+    background-color:var(--charcoal);
+    height:2rem;
+    font-size: inherit;
+    padding:1rem;
+    place-content: center;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    color:#e9c46a;
+ }
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area:footer
+}
