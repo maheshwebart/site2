@@ -109,7 +109,7 @@ div.navbar .container nav ul li a:hover::after{
 
 header{
     grid-area:header;
-    height:80svh;
+    height:90svh;
     background-color: var( --sandy-brown);
     background-image: url('images/banner_travel_exp.webp');
     background-repeat: no-repeat;
@@ -132,12 +132,13 @@ header .container h1{
  
 }
 
-header .container span{
+header .container span a{
     display: inline-block;
-    color:var(--burnt-sienna);
-    font-size: 1.5rem;
+    font-size: 2rem;
     position:relative;
-    z-index:2
+    z-index:2;
+    color:var(--burnt-sienna);
+    text-decoration: none;
 }
 
 header .container p{
@@ -145,21 +146,25 @@ header .container p{
    text-align: center;
    
 }
- header .container span::after{
+ header .container span a::after{
     content:'';
     position:absolute;
     width:100%;
-    bottom:3px;
+    transform: scaleX(0);
+    bottom:6px;
     left:0;
     height:6px;
     background-color: var(--saffron);
-    z-index: 0;
-    
+    z-index: -9;
+    transition:transform 0.3s ease-in;
+ }
 
+ header .container span a:hover::after{
+    transform: scaleX(1);
  }
 
 
- header .container .button {
+ header .container .button a{
     display: flex;
     background-color:var(--charcoal);
     height:2rem;
@@ -170,6 +175,7 @@ header .container p{
     justify-content: center;
     flex-direction: column;
     color:#e9c46a;
+    text-decoration: none;
  }
 main{
     grid-area: main;
