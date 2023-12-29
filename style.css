@@ -5,6 +5,7 @@
     --sandy-brown: #f4a261ff;
     --burnt-sienna: #e76f51ff;
     --bkg-color:#ffffff;
+    --body-color:#464646;
 }
 
 html{
@@ -18,7 +19,7 @@ body{
     background-color: var(--bkg-color);
 }
 
-*{
+*, *::after, *::before{
     margin:0px;
     padding:0px;
     box-sizing: border-box;
@@ -38,6 +39,7 @@ section#page{
 
 div.navbar{
     grid-area: nav;
+
 }
 
 div.navbar .container{
@@ -179,7 +181,109 @@ header .container p{
  }
 main{
     grid-area: main;
+    height: 100svh;
+    padding-block:3rem
 }
+
+main .container{
+    margin-top:2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+}
+
+
+ main .container .gallery{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+ }
+
+ main .container .gallery .part1, main .container .gallery .part2{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+
+ }
+ main .container .gallery .part1 img, main .container .gallery .part2 a img {
+    max-width: 100%;
+    border:1px solid var(--saffron);
+    transition: transform 0.3s ease-in;
+ }
+
+ main .container .gallery .part1 img:hover, main .container .gallery .part2 a img:hover {
+
+    transform:scale(1.2);
+ }
+
+ main .container .gallery .part1 div, main .container .gallery .part2 div {
+    max-width: 100%;
+    overflow: hidden;
+    
+ }
+
+
+
+
+
+
+
+ main .container .main-txt .sec{
+    padding-inline:2rem;
+    padding-bottom:2rem
+ }
+
+ main .container .main-txt .sec a{
+    text-decoration: none;
+    color:inherit;
+    position: relative;
+ }
+
+ main .container .main-txt .sec p{
+  
+    color:var(--body-color)
+    
+ }
+
+ main .container .main-txt .sec a h2::after{
+    content:'';
+    position: absolute;
+    width:100%;
+    transform: scaleX(0.1);
+    height:4px;
+   bottom:0;
+   left:0;
+   background-color: var(--saffron);
+   transition:transform 0.3s ease-in;
+   transform-origin: bottom left;
+ }
+
+ main .container .main-txt .sec a h2:hover::after{
+   
+    transform: scaleX(0.4);
+   
+   
+ }
+
+
+
+ /* @keyframes slide {
+
+    from{
+      color: var(--charcoal); 
+      transform:scaleX(0.8);
+      transform:scaleY(0.8);
+      transform-origin: top right;
+
+    }
+    
+    to{
+      color: var(--sandy-brown); 
+      transform:scaleX(0.2);
+      transform:scaleY(0.2);
+      transform-origin: top right;
+    }
+ } */
 
 footer{
     grid-area:footer
