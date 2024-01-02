@@ -111,12 +111,16 @@ div.navbar .container nav ul li a:hover::after{
 }
 
 header{
+    display: grid;
     grid-area:header;
     height:90svh;
     background-color: var( --sandy-brown);
     background-image: url('images/banner_travel_exp.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
     
 }
 
@@ -127,6 +131,7 @@ header .container{
     padding-inline:7.5rem;
     align-items: center;
     justify-items: center;
+    place-self: center;
 }
 header .container h1{
     padding-top:3rem;
@@ -302,49 +307,71 @@ main .container{
 .feature{
     grid-area: feature;
     display: grid;
-    height:100svh
+    height:100svh;
+    align-items: center;
+    background-color: rgb(28, 28, 28)
 }
 
-.feature .container {
+.feature .container .feature-txt{
 
 display: flex;
-justify-content: center;
+/* justify-content: center; */
 align-items: center;
 flex-direction: column;
+/* justify-items: center; */
 
 }
 
-.feature .container .feature-txt {
-    text-align: center;
-    max-width:30rem;
-    background-image: linear-gradient(red, green);
-    background-size: contain;
+
+.feature .container .feature-txt span{
+    display: flex;
+    /* justify-content: center; */
+
+}
+.feature .container .feature-txt span{
+    color:hsl(0 0% 100% / 0.2);
     background-clip: text;
-    color:transparent;
-    animation: scrol linear forwards;
-    animation-timeline:scroll;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-image: linear-gradient(90deg, red, orange);
+    animation: scroll-reveal linear forwards;
+    animation-timeline: view();
    
 }
+.feature .container .feature-txt h2 span{
+    animation-range-start: cover 20vh;
+    animation-range-end: cover 30vh;
+}
 
-@keyframes scrol {
+.feature .container .feature-txt p span {
+    animation-range-start: cover 24.5vh;
+    animation-range-end: cover 50vh;
+}
 
-    from{
-        background-image: linear-gradient(green yellow) ;
+
+@keyframes scroll-reveal {
+
+    to {
+        background-size: 100% 100%;
     }
 
-    to{
-        background-image: linear-gradient(rgb(177, 25, 132) yellow) ;
-    }
     
 }
 
-.feature-txt {}
+
 
 .feature .container .feature-txt h2{
     font-size: 3rem;
+    line-height: 1;
    
 }
-
+.feature .container .feature-txt p{
+    font-size: inherit;
+    line-height: 1.5;
+    max-width: 55ch;
+    margin-inline: auto;
+    text-align: center;
+}
 
 
 
