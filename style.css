@@ -16,7 +16,7 @@ html{
 }
 
 body{
-    /* max-width: 100%; */
+max-width: 100%; 
     background-color: var(--bkg-color);
 }
 
@@ -515,4 +515,89 @@ footer .container p.copy{
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+body{
+   width: 100%;
+    overflow-x: hidden;
+}
+    section#page{
+       
+        grid-template-areas: 'nav'
+        'header'
+        'main'
+        'feature'
+        'feat-brd'
+        'feature2'
+        'footer'; 
+        /* justify-content: center; */
+    
+    }
+
+    div.navbar .container{
+    
+       flex-direction: column;
+       
+        
+    }
+
+
+    header{
+      
+        height:auto;
+        height:45svh;
+        
+    }
+
+
+    main .container{
+    
+        grid-template-columns: 1fr;
+    }
+
+
+    main .container .gallery{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0.50rem;
+        height:auto;
+        width: fit-content;
+    
+     }
+    
+     main .container .gallery .part1, main .container .gallery .part2{
+        flex-direction: column;
+        gap: 0.5rem;
+     }
+
+
+     main .container .gallery .part1 img, main .container .gallery .part2 a img {
+        transition:none;
+       width: 100%;
+       object-fit: cover;
+       object-position: bottom;
+
+     }
+
+
+     main .container .main-txt {
+        padding-inline:3rem;
+        max-width: 100%;
+        text-wrap:balance;
+     }
+    
+    
+    
 }
