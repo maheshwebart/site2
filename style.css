@@ -20,6 +20,7 @@ max-width: 100%;
     background-color: var(--bkg-color);
 }
 
+
 *, *::after, *::before{
     margin:0px;
     padding:0px;
@@ -529,6 +530,14 @@ footer .container p.copy{
 
 @media screen and (max-width:768px) {
 
+    img{
+        width:100% !important;
+        object-fit: cover !important;
+        object-position: bottom;
+        height:auto !important
+    }
+    
+
 body{
    width: 100%;
     overflow-x: hidden;
@@ -555,8 +564,7 @@ body{
 
 
     header{
-      
-        height:auto;
+
         height:45svh;
         
     }
@@ -587,14 +595,13 @@ body{
         transition:none;
        width: 100%;
        object-fit: cover;
-       object-position: bottom;
+       object-position: top;
 
      }
 
 
      main .container .main-txt {
         padding-inline:3rem;
-        max-width: 100%;
         text-wrap:balance;
      }
     
