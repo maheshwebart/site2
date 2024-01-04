@@ -211,60 +211,34 @@ main .container{
 
  main .container .gallery{
     display: grid;
-    grid-template-areas: 'one four'
-    'two five'
-    'three six';
-    gap:1rem;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 0.50rem;
     height:80svh;
     overflow: hidden;
 
  }
- .gallery a {
-    display: grid;
- }
- main .container .gallery .part1 img, main .container .gallery a img {
-    max-width: 100%;
-    border:1px solid var(--saffron);
-    transition: transform 0.3s ease-in;
-    overflow: hidden;
-    display: grid;
-    height:auto;
 
- }
- /* main .container .gallery .part1, main .container .gallery {
+ main .container .gallery .part1, main .container .gallery .part2{
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     row-gap: 1.5rem;
 
- } */
+ }
+ main .container .gallery .part1 img, main .container .gallery .part2 a img {
+    max-width: 100%;
+    border:1px solid var(--saffron);
+    transition: transform 0.3s ease-in;
+    overflow: hidden;
 
- .gallery div a img:nth-child(1){
-    grid-area: one;
- }
- .gallery div a img:nth-child(2){
-    grid-area: two;
- }
- .gallery div a img:nth-child(3){
-    grid-area: three;
- }
- .gallery div a img:nth-child(4){
-    grid-area: four;
- }
- .gallery div a img:nth-child(5){
-    grid-area: five;
  }
 
- .gallery div a img:nth-child(5){
-    grid-area: six;
- }
-
- main .container .gallery .part1 img:hover, main .container .gallery  a img:hover {
+ main .container .gallery .part1 img:hover, main .container .gallery .part2 a img:hover {
 
     transform:scale(1.2);
  }
 
- main .container .gallery .part1 div, main .container .gallery  div {
+ main .container .gallery .part1 div, main .container .gallery .part2 div {
     max-width: 100%;
     overflow: hidden;
     
@@ -557,7 +531,7 @@ footer .container p.copy{
 @media screen and (max-width:768px) {
 
     img{
-        max-width:100% !important;
+        width:100% !important;
         object-fit: cover !important;
         object-position: bottom;
         height:auto !important
@@ -565,8 +539,8 @@ footer .container p.copy{
     
 
 body{
-   max-width: 100% !important;
-    overflow-x: hidden !important;
+   width: 100%;
+    overflow-x: hidden;
 }
     section#page{
        
@@ -580,14 +554,12 @@ body{
         /* justify-content: center; */
     
     }
-    div.navbar .container{
 
-        
-    }
     div.navbar .container{
     
        flex-direction: column;
-       padding-inline:1rem;
+       
+        
     }
 
 
@@ -596,41 +568,32 @@ body{
         height:45svh;
         
     }
-    header .container{
-       
-        padding-inline:1rem;
-    
-    }
+
 
     main .container{
     
         grid-template-columns: 1fr;
-        justify-content: center;
-      align-items: center;
-      margin-inline:auto;
-
     }
 
-    main .container .gallery a img{
-        width: 100% !important;
-    }
-    
-     main .container .gallery{
+
+    main .container .gallery{
         display: grid;
-        grid-template-areas:none;
-        justify-content: center;
         grid-template-columns: 1fr;
+        column-gap: 0.50rem;
         height:auto;
-        align-self: center !important;
-        align-items: center;
-        margin-block-end: 2rem;
+        width: fit-content;
     
+     }
+    
+     main .container .gallery .part1, main .container .gallery .part2{
+        flex-direction: column;
+        gap: 0.5rem;
      }
 
 
-     main .container .gallery .part1 img, main .container .gallery  a img {
+     main .container .gallery .part1 img, main .container .gallery .part2 a img {
         transition:none;
-       width: 50%;
+       width: 100%;
        object-fit: cover;
        object-position: top;
 
@@ -638,57 +601,10 @@ body{
 
 
      main .container .main-txt {
-        padding-inline:1rem;
+        padding-inline:3rem;
         text-wrap:balance;
      }
     
-
-     main .container .main-txt .sec{
-        padding-inline:0.5rem;
-        padding-bottom:1rem
-     }
     
-
-
-
-
-
-
-
-
-
-     .feature2 {
-
-        height:auto !important
-    }
-
-
-
-     .feature2 .container{
-
-        grid-template-columns: 1fr;
-        column-gap:1rem;
-        padding-inline: 1rem;
-        padding
-    }
-
-    .feature2 .container .features
-    {
-        margin-block: 2rem;
-    }
-
-     footer{
-        height:20svh;
-    
-    }
-
-
-
-     footer .container {
-        grid-template-columns: 1fr;
-        padding-inline: 1rem;
-    
-    
-    }
     
 }
