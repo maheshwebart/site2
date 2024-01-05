@@ -606,6 +606,19 @@ body{
     
     }
 
+    header{
+  
+        height:45svh;
+        background-image: url('images/banner_travel_exp.webp');
+      
+        
+    }
+    
+    header .container{
+        padding-inline:3rem;
+    }
+  
+
     main .container{
     
         grid-template-columns: 1fr;
