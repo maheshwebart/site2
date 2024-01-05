@@ -599,7 +599,7 @@ body{
 
     header{
   
-        height:auto;
+        height: calc(auto +  3rem);
         background-image: url('images/banner_travel_exp.webp');
       
         
@@ -693,7 +693,7 @@ body{
 
 
      footer .container {
-        grid-template-columns: 1fr;
+        grid-template-columns:repeat(3, 1fr);
         padding-inline: 1rem;
         text-align: left;
         justify-content: center;
