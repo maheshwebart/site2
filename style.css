@@ -12,9 +12,11 @@ html{
 
   font-family: poppins;
   scroll-behavior: smooth;
-
 }
-
+img{
+    height: auto;
+    max-width: 100%;
+}
 body{
 max-width: 100%; 
     background-color: var(--bkg-color);
@@ -472,7 +474,9 @@ background-color: rgb(28, 28, 28)
     background-color:var(--saffron);
     border-radius: 16px;
  }
-
+.feat-border svg{
+    margin:-1px;
+}
 @keyframes rot {
     from{
         transform: rotate(0deg);
@@ -674,7 +678,7 @@ body{
 
     .feature2 .container .features
     {
-        margin-block: 2rem;
+        margin-block:2rem;
     }
 
      footer{
@@ -687,6 +691,9 @@ body{
      footer .container {
         grid-template-columns: 1fr;
         padding-inline: 1rem;
+        text-align: left;
+        justify-content: center;
+        align-items: center;
     
     
     }
