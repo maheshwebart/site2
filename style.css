@@ -595,20 +595,11 @@ body{
     }
 
 
-    header{
-
-        height:45svh;
-        
-    }
-    header .container{
-       
-        padding-inline:1rem;
-    
-    }
+  
 
     header{
   
-        height:45svh;
+        height:auto;
         background-image: url('images/banner_travel_exp.webp');
       
         
