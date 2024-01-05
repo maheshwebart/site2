@@ -13,6 +13,14 @@ html{
   font-family: poppins;
   scroll-behavior: smooth;
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    display: grid;
+    justify-content: center;
+ }
+
 img{
     height: auto;
     max-width: 100%;
@@ -47,8 +55,10 @@ section#page{
 div.navbar{
     grid-area: nav;
     position:fixed;
-  width: 100%;
+  width: 100% !important;
   z-index: 999;
+  background: rgba(42, 157, 143);
+  display: flex;
 
 }
 
@@ -58,8 +68,8 @@ div.navbar .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline:7.5rem
-    
+    padding-inline:7.5rem;
+    flex:2;
 }
 
 div.navbar .container .logo h2 a{
@@ -599,7 +609,7 @@ body{
 
     header{
   
-        height: calc(auto +  3rem);
+        height: calc(auto +  6rem);
         background-image: url('images/banner_travel_exp.webp');
       
         
@@ -658,8 +668,12 @@ body{
     
 
 
+     
+     .feature{
 
-
+        padding-inline:3rem
+       
+    }
 
 
 
@@ -693,7 +707,7 @@ body{
 
 
      footer .container {
-        grid-template-columns:repeat(3, 1fr);
+        grid-template-columns:1fr;
         padding-inline: 1rem;
         text-align: left;
         justify-content: center;
@@ -702,4 +716,17 @@ body{
     
     }
     
+}
+
+
+@media screen and (max-width:540px) {
+
+    header .container h1{
+        text-align: center;
+        padding-top:3rem;
+   
+  
+    }
+
+
 }
