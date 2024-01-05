@@ -69,7 +69,6 @@ div.navbar .container{
     justify-content: space-between;
     align-items: center;
     padding-inline:7.5rem;
-    flex:2;
 }
 
 div.navbar .container .logo h2 a{
@@ -594,12 +593,9 @@ body{
         /* justify-content: center; */
     
     }
-    div.navbar .container{
-
-        
-    }
-    div.navbar .container{
     
+    div.navbar .container{
+     width:100%;
        flex-direction: column;
        padding-inline:1rem;
     }
@@ -671,7 +667,7 @@ body{
      
      .feature{
 
-        padding-inline:3rem
+        padding-inline:4rem
        
     }
 
