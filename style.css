@@ -14,12 +14,10 @@ html{
   scroll-behavior: smooth;
 }
 
-html, body {
+body, html {
     max-width: 100%;
-    overflow-x: hidden;
-    /* display: grid;
-    justify-content: center; */
- }
+   justify-content: center; 
+ } 
 
 img{
     height: auto;
@@ -47,20 +45,29 @@ section#page{
     'feature2 feature2 feature2 feature2 feature2 feature2'
     'footer footer footer footer footer footer'; 
     /* justify-content: center; */
-    margin:auto;
-    
+
 
 }
 
 div.navbar{
     grid-area: nav;
-    position:fixed;
-    left:0;
+    position:sticky;
+    height: auto;
+    top:0;
   width: 100% !important;
   z-index: 999;
   background: rgba(42, 157, 143);
   display: flex;
 
+}
+
+div.navbar .container .hamb span{
+    width:3rem;
+    height:0.20rem;
+    margin-bottom:5px;
+    background-color: #e9c46a;
+    border-radius: 10px;
+    display: block;
 }
 
 div.navbar .container{
@@ -81,19 +88,19 @@ div.navbar .container .logo h2 a{
 
 }
 
-div.navbar .container nav ul{
+div.navbar .container nav .menu{
     display: flex;
-    flex-direction: space-between;
+    justify-content: space-between;
     list-style-type: none;
     padding:0 5px;
 }
-div.navbar .container nav ul li{
+div.navbar .container nav .menu li{
     padding-left:0.5rem;
 
 
 }
 
-div.navbar .container nav ul li a{
+div.navbar .container nav .menu li a{
     text-decoration: none;
     color:var(--charcoal);
     position: relative;
@@ -222,19 +229,40 @@ main .container{
 
 
  main .container .gallery{
+    width:100%;
+    max-width:600px;
     display: grid;
-    grid-template-areas: 'one four'
-    'two five'
-    'three six';
-    gap:1rem;
-    height:80svh;
-    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: 250px;
+    grid-auto-flow: dense;
+    grid-gap: 1.25rem;
+    
+    
 
  }
- .gallery a {
+
+ main .container .gallery .gallery-item{
+    position:relative;
+    background-color: var(--saffron);
+    overflow: hidden;
+ }
+
+ main .container .gallery .gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84,0.44, 1);
+ }
+
+
+ /* main .container .gallery .gallery-item:nth-child(3n-1) {
+    grid-row: span 1;
+    grid-column: span 1;
+ } */
+ /* .gallery a {
     display: grid;
  }
- main .container .gallery .part1 img, main .container .gallery a img {
+ main .container .gallery div a img {
     max-width: 100%;
     border:1px solid var(--saffron);
     transition: transform 0.3s ease-in;
@@ -242,7 +270,7 @@ main .container{
     display: grid;
     height:auto;
 
- }
+ } */
  /* main .container .gallery .part1, main .container .gallery {
     display: flex;
     flex-direction: column;
@@ -251,7 +279,7 @@ main .container{
 
  } */
 
- .gallery div a img:nth-child(1){
+ /* .gallery div a img:nth-child(1){
     grid-area: one;
  }
  .gallery div a img:nth-child(2){
@@ -269,7 +297,7 @@ main .container{
 
  .gallery div a img:nth-child(5){
     grid-area: six;
- }
+ } */
 
  main .container .gallery .part1 img:hover, main .container .gallery  a img:hover {
 
@@ -289,6 +317,7 @@ main .container{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+ 
  }
 
 
@@ -428,7 +457,7 @@ background-color: rgb(28, 28, 28)
 .feat-border{
   grid-area: feat-brd;
   grid-template-columns: 1fr;
-  background-color: #e9c46a;
+  background-color: var(--saffron)
  
 }
 
@@ -438,7 +467,7 @@ background-color: rgb(28, 28, 28)
     justify-content: center;
     align-items: center;
     height:100svh;
-    background-color: #e9c46a;
+    background-color: var(--saffron)
 }
 .feature2 .container{
     display: grid;
@@ -472,7 +501,7 @@ background-color: rgb(28, 28, 28)
    top:0;
    width:12rem;
    height:200%;
-   background:linear-gradient(red, rgb(222, 102, 17));
+   background:linear-gradient(red, var(--saffron));
    animation: rot linear infinite;   
    animation-duration: 4s;
 }
@@ -558,10 +587,75 @@ footer .container p.copy{
     justify-content: center;
 }
 
+.dis {
+    display: flex !important;
+    height:auto;
+}
+
+.hamb {
+    display: none;
+}
 
 
+@media screen and (max-width:1025px) {
+    
+ 
 
+    section#page{
+       
+        grid-template-areas: '..nav..'
+        '..header..'
+        '..main..'
+        '..feature..'
+        '..feat-brd..'
+        '..feature2..'
+        '..footer..'; 
+        /* justify-content: center; */
+    
+    }
 
+    main .container{
+        padding-block:2rem;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+
+    }
+
+    main .container .gallery {
+        align-self: center;
+        justify-content: center;
+   
+    }
+    main .container .gallery div {
+      
+
+        align-self: center;
+
+    }
+
+    main .container .gallery{
+        
+        grid-template-columns: 1fr;
+        grid-template-rows:auto;
+        overflow: hidden;
+    
+     }
+
+    main .container .gallery div a img {
+        border:1px solid var(--saffron);
+        transition: transform 0.3s ease-in;
+        overflow: hidden;
+        display: grid;
+        height:auto;
+        justify-content: center;
+        align-items: center;
+
+     }
+    
+    
+}
 
 
 
@@ -585,12 +679,12 @@ body{
     section#page{
        
         grid-template-areas: 'nav'
-        'header'
-        'main'
-        'feature'
-        'feat-brd'
-        'feature2'
-        'footer'; 
+        '..header..'
+        '..main..'
+        '..feature..'
+        '..feat-brd..'
+        '..feature2..'
+        '..footer..'; 
         /* justify-content: center; */
     
     }
@@ -600,9 +694,30 @@ body{
        flex-direction: column;
        padding-inline:1rem;
     }
+    div.navbar .container nav .menu {
+       display: none;
+       align-items: center !important;
+      
+    }
 
+    div.navbar .container nav ul {
+        flex-direction: column !important;
+    }
+    div.navbar .container nav .menu li {
+       border-bottom: 1px solid var(--saffron);
+       padding-block:10px !important
+       
+     }
+    div.navbar .container nav .menu {
+        display: none;
+        align-items: center !important;
+       
+     }
 
-  
+  .hamb {
+    display: block;
+    cursor: pointer;
+  }
 
     header{
   
@@ -630,7 +745,7 @@ body{
         width: 100% !important;
     }
     
-     main .container .gallery{
+     /* main .container .gallery{
         display: grid;
         grid-template-areas:none;
         justify-content: center;
@@ -649,7 +764,7 @@ body{
        object-fit: cover;
        object-position: top;
 
-     }
+     } */
 
 
      main .container .main-txt {
@@ -727,3 +842,7 @@ body{
 
 
 }
+
+
+
+
