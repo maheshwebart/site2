@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+
+
+
 </head>
 <body>
     <section id="page">
@@ -54,13 +60,13 @@
 
             <div class="gallery">
         
-                    <div class="gallery-item"><a href="#"><img src="images/Huntsville-Feature.jpg" alt="1"></a></div>
-                    <div class="gallery-item"><a href="#"><img src="images/banner_travel_exp.webp" alt="2"></a></div>
+                    <div class="gallery-item"><a href="images/Huntsville-Feature.jpg" class="glightbox" data-gallery="gallery1"><img src="images/Huntsville-Feature.jpg" alt="1"></a></div>
+                    <div class="gallery-item"><a href="images/banner_travel_exp.webp" class="glightbox" data-gallery="gallery1"><img src="images/banner_travel_exp.webp" alt="2"></a></div>
        
-               <div class="gallery-item"><a href="#"><img src="images/KW-why-travel-is-important.jpg.webp" alt="3"></a></div>
-                <div class="gallery-item"><a href="#"><img src="images/philipp-kammerer-6Mxb_mZ_Q8E-unsplash-2048x1366.jpg" alt="4"></a></div>
-                <div class="gallery-item"><a href="#"><img src="images/1920_sustainabletravel.jpg" alt="5"></a></div>
-                <div class="gallery-item"><a href="#"><img src="images/large-group-of-happy-friends-in-mountains-area-royalty-free-image-1653422631.jpg" alt="5"></a></div>
+               <div class="gallery-item"><a href="images/KW-why-travel-is-important.jpg.webp" class="glightbox" data-gallery="gallery1"><img src="images/KW-why-travel-is-important.jpg.webp" alt="3"></a></div>
+                <div class="gallery-item"><a href="images/philipp-kammerer-6Mxb_mZ_Q8E-unsplash-2048x1366.jpg" class="glightbox" data-gallery="gallery1"><img src="images/philipp-kammerer-6Mxb_mZ_Q8E-unsplash-2048x1366.jpg" alt="4"></a></div>
+                <div class="gallery-item"><a href="images/1920_sustainabletravel.jpg" class="glightbox" data-gallery="gallery1"><img src="images/1920_sustainabletravel.jpg" alt="5"></a></div>
+                <div class="gallery-item"><a href="images/large-group-of-happy-friends-in-mountains-area-royalty-free-image-1653422631.jpg" class="glightbox" data-gallery="gallery1"><img src="images/large-group-of-happy-friends-in-mountains-area-royalty-free-image-1653422631.jpg" alt="5"></a></div>
             </div>
 
              <div class="main-txt">
@@ -224,6 +230,15 @@
 
 
     </section>
-  <script src="index.js"></script>  
+  <script src="index.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+<script type="text/javascript">
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: true
+});
+</script> 
 </body>
 </html>
