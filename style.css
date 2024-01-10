@@ -25,6 +25,8 @@ img{
 }
 body{
 max-width: 100%; 
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(250px, calc(100%-20%)));
     background-color: var(--bkg-color);
 }
 
@@ -73,6 +75,7 @@ div.navbar .container .hamb span{
 div.navbar .container{
     /* grid-area: nav; */
     background: rgba(42, 157, 143);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -472,10 +475,12 @@ background-color: rgb(28, 28, 28)
 }
 .feature2 .container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
     margin-inline: auto;
     column-gap:2rem;
     padding-inline: 7.5rem;
+    
 }
 .feature2 .container .features {
     width:20rem;
@@ -488,14 +493,21 @@ background-color: rgb(28, 28, 28)
     justify-content: center;
     align-items: center;
  text-align: center; 
+ box-shadow: var(--charcoal) 2px 2px 8px;
     
 }
 
-.feature2 .container .features h2{
+.feature2 .container .features .wrap{
+    position: relative;
     z-index: 10;
     text-align: center;
+    padding: 2rem;
 }
+.feature2 .container .features .wrap img{
+    max-width:100%;
+    border:1px solid var(--sandy-brown)
 
+}
 .feature2 .container .features::before {
    content:'';
    position:absolute;
@@ -780,7 +792,7 @@ body{
 
 
      footer .container {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
         padding-inline: 1rem;
         text-align: left;
         justify-content: center;
